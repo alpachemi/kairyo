@@ -38,17 +38,17 @@ from the root of the repository.
 
 **Note**: You only need Berkeley DB if the wallet is enabled (see [*Disable-wallet mode*](/doc/build-osx.md#disable-wallet-mode)).
 
-Build Litecoin Core
+Build Kairyo Core
 ------------------------
 
-1. Clone the Litecoin Core source code:
+1. Clone the Kairyo Core source code:
 
-        git clone https://github.com/litecoin-project/litecoin
-        cd litecoin
+        git clone https://github.com/kairyo-project/kairyo
+        cd kairyo
 
-2.  Build Litecoin Core:
+2.  Build Kairyo Core:
 
-    Configure and build the headless Litecoin Core binaries as well as the GUI (if Qt is found).
+    Configure and build the headless Kairyo Core binaries as well as the GUI (if Qt is found).
 
     You can disable the GUI build by passing `--without-gui` to configure.
 
@@ -70,13 +70,13 @@ Build Litecoin Core
 
     or
 
-        cd ~/litecoin/src
-        cp litecoind /usr/local/bin/
-        cp litecoin-cli /usr/local/bin/
+        cd ~/kairyo/src
+        cp kairyod /usr/local/bin/
+        cp kairyo-cli /usr/local/bin/
 
 Disable-wallet mode
 --------------------
-When the intention is to run only a P2P node without a wallet, Litecoin Core may be compiled in
+When the intention is to run only a P2P node without a wallet, Kairyo Core may be compiled in
 disable-wallet mode with:
 
     ./configure --disable-wallet
@@ -88,28 +88,28 @@ Mining is also possible in disable-wallet mode using the `getblocktemplate` RPC 
 Running
 -------
 
-Litecoin Core is now available at `./src/litecoind`
+Kairyo Core is now available at `./src/kairyod`
 
 Before running, you may create an empty configuration file:
 
-    mkdir -p "/Users/${USER}/Library/Application Support/Litecoin"
+    mkdir -p "/Users/${USER}/Library/Application Support/Kairyo"
 
-    touch "/Users/${USER}/Library/Application Support/Litecoin/litecoin.conf"
+    touch "/Users/${USER}/Library/Application Support/Kairyo/kairyo.conf"
 
-    chmod 600 "/Users/${USER}/Library/Application Support/Litecoin/litecoin.conf"
+    chmod 600 "/Users/${USER}/Library/Application Support/Kairyo/kairyo.conf"
 
-The first time you run litecoind, it will start downloading the blockchain. This process could take many hours, or even days on slower than average systems.
+The first time you run kairyod, it will start downloading the blockchain. This process could take many hours, or even days on slower than average systems.
 
 You can monitor the download process by looking at the debug.log file:
 
-    tail -f $HOME/Library/Application\ Support/Litecoin/debug.log
+    tail -f $HOME/Library/Application\ Support/Kairyo/debug.log
 
 Other commands:
 -------
 
-    ./src/litecoind -daemon # Starts the litecoin daemon.
-    ./src/litecoin-cli --help # Outputs a list of command-line options.
-    ./src/litecoin-cli help # Outputs a list of RPC commands when the daemon is running.
+    ./src/kairyod -daemon # Starts the kairyo daemon.
+    ./src/kairyo-cli --help # Outputs a list of command-line options.
+    ./src/kairyo-cli help # Outputs a list of RPC commands when the daemon is running.
 
 Notes
 -----
